@@ -1,0 +1,309 @@
+<!doctype html><html><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=description content="Universal Web Darts Scoring."><meta name=viewport content="width=device-width, initial-scale=1"><title>Web Starter Kit</title><link rel=stylesheet href=styles/main.css></head><body><header class="app-bar promote-layer"><div class=app-bar-container><button class=menu><img src=images/hamburger.svg alt=Menu></button><h1 class=logo>Web <strong>Darts Scoring</strong></h1><section class=app-bar-actions></section></div></header><nav class="navdrawer-container promote-layer"><h4>Navigation</h4><ul><li><a href=index.html>Hello</a></li><li><a href=styleguide_1.html>Cricket</a></li><li><a href=styleguide_2.html>501</a></li></ul></nav><main><body class=page--styleguide><div class=container><div class=medium><br><select onchange=playerchange(this.options[this.selectedIndex].value) id=myoptions><option value=2player id=2player>2 Player</option><option value=3player id=3player>3 Player</option><option value=4player id=4player selected>4 Player</option></select><p><input type=text id=pl1 value="Pl 1" style="max-width:8%; width:100%; border:hidden; font-weight:800; display:inline-block; align-items:flex-start; min-width:40px"><input type=text id=pl2 value="Pl 2" style="max-width:8%; width:100%; border:hidden; font-weight:800; display:inline-block; align-items:flex-start; min-width:40px"><input type=button style="max-width:8%; width:100%; border:hidden; background-color:#FFFFFF; min-width:40px"><input type=text id=pl3 value="Pl 3" style="max-width:8%; width:100%; border:hidden; font-weight:800; display:inline-block; align-items:flex-start; min-width:40px"><input type=text id=pl4 value="Pl 4" style="max-width:8%; width:100%; border:hidden; font-weight:800; display:inline-block; align-items:flex-start; min-width:40px"></p></div><div class=keys><input type=button class=button--secondary value=" " onclick=v(this.id) id=20_1 style="background-color:#000000; max-width:8%; width:100%"><input type=button class=button--secondary value=" " onclick=v(this.id) id=20_2 style="background-color:#000000; max-width:8%; width:100%"><input type=button class=button--secondary value=20 style="max-width:8%; width:100%"><input type=button class=button--secondary value=" " onclick=v(this.id) id=20_3 style="background-color:#000000; max-width:8%; width:100%"><input type=button class=button--secondary value=" " onclick=v(this.id) id=20_4 style="background-color:#000000; max-width:8%; width:100%"><br><input type=button class=button--secondary value=" " onclick=v(this.id) id=19_1 style="background-color:#000000; max-width:8%; width:100%"><input type=button class=button--secondary value=" " onclick=v(this.id) id=19_2 style="background-color:#000000; max-width:8%; width:100%"><input type=button class=button--secondary value=19 style="max-width:8%; width:100%"><input type=button class=button--secondary value=" " onclick=v(this.id) id=19_3 style="background-color:#000000; max-width:8%; width:100%"><input type=button class=button--secondary value=" " onclick=v(this.id) id=19_4 style="background-color:#000000; max-width:8%; width:100%"><br><input type=button class=button--secondary value=" " onclick=v(this.id) id=18_1 style="background-color:#000000; max-width:8%; width:100%"><input type=button class=button--secondary value=" " onclick=v(this.id) id=18_2 style="background-color:#000000; max-width:8%; width:100%"><input type=button class=button--secondary value=18 style="max-width:8%; width:100%"><input type=button class=button--secondary value=" " onclick=v(this.id) id=18_3 style="background-color:#000000; max-width:8%; width:100%"><input type=button class=button--secondary value=" " onclick=v(this.id) id=18_4 style="background-color:#000000; max-width:8%; width:100%"><br><input type=button class=button--secondary value=" " onclick=v(this.id) id=17_1 style="background-color:#000000; max-width:8%; width:100%"><input type=button class=button--secondary value=" " onclick=v(this.id) id=17_2 style="background-color:#000000; max-width:8%; width:100%"><input type=button class=button--secondary value=17 style="max-width:8%; width:100%"><input type=button class=button--secondary value=" " onclick=v(this.id) id=17_3 style="background-color:#000000; max-width:8%; width:100%"><input type=button class=button--secondary value=" " onclick=v(this.id) id=17_4 style="background-color:#000000; max-width:8%; width:100%"><br><input type=button class=button--secondary value=" " onclick=v(this.id) id=16_1 style="background-color:#000000; max-width:8%; width:100%"><input type=button class=button--secondary value=" " onclick=v(this.id) id=16_2 style="background-color:#000000; max-width:8%; width:100%"><input type=button class=button--secondary value=16 style="max-width:8%; width:100%"><input type=button class=button--secondary value=" " onclick=v(this.id) id=16_3 style="background-color:#000000; max-width:8%; width:100%"><input type=button class=button--secondary value=" " onclick=v(this.id) id=16_4 style="background-color:#000000; max-width:8%; width:100%"><br><input type=button class=button--secondary value=" " onclick=v(this.id) id=15_1 style="background-color:#000000; max-width:8%; width:100%"><input type=button class=button--secondary value=" " onclick=v(this.id) id=15_2 style="background-color:#000000; max-width:8%; width:100%"><input type=button class=button--secondary value=15 style="max-width:8%; width:100%"><input type=button class=button--secondary value=" " onclick=v(this.id) id=15_3 style="background-color:#000000; max-width:8%; width:100%"><input type=button class=button--secondary value=" " onclick=v(this.id) id=15_4 style="background-color:#000000; max-width:8%; width:100%"><br><input type=button class=button--secondary value=" " onclick=v(this.id) id=25_1 style="background-color:#000000; max-width:8%; width:100%"><input type=button class=button--secondary value=" " onclick=v(this.id) id=25_2 style="background-color:#000000; max-width:8%; width:100%"><input type=button class=button--secondary value=BL style="max-width:8%; width:100%"><input type=button class=button--secondary value=" " onclick=v(this.id) id=25_3 style="background-color:#000000; max-width:8%; width:100%"><input type=button class=button--secondary value=" " onclick=v(this.id) id=25_4 style="background-color:#000000; max-width:8%; width:100%"></div><div class=medium><input type=text readonly id=d1 value=0 style="max-width:8%; width:100%; font-weight:800; text-align: center; font-size:24px; display:inline-block; align-items:flex-start; min-width:40px; border:hidden"><input type=text readonly id=d2 value=0 style="max-width:8%; width:100%; font-weight:800; text-align: center; font-size:24px; display:inline-block; align-items:flex-start; min-width:40px; border:hidden"><input type=button style="max-width:8%; width:100%; border:hidden; background-color:#FFFFFF; display:inline-block; align-items:flex-start; min-width:40px"><input type=text readonly id=d3 value=0 style="max-width:8%; width:100%; font-weight:800; text-align: center; font-size:24px; display:inline-block; align-items:flex-start; min-width:40px; border:hidden"><input type=text readonly id=d4 value=0 style="max-width:8%; width:100%; font-weight:800; text-align: center; font-size:24px; display:inline-block; align-items:flex-start; min-width:40px; border:hidden"></div><div class=medium><input type=button class=button--secondary value=New onclick=new_game() style="background-color:#000000; max-width:40%; width:100%; text-align: center"></div></div></body><p></p><p></p></main><script src=scripts/main.min.js></script><script>
+	var player1_finish = 0, player2_finish = 0, player3_finish = 0, player4_finish = 0;
+	
+    function c(val)
+	{
+		document.getElementById("d").value=val;
+	}
+	function v(val)
+  	{
+		var test = document.getElementById(val);
+		update_button(test, val);
+	}
+	function e() 
+	{ 
+		try 
+		{ 
+		  c(eval(document.getElementById("d").value)) 
+		} 
+		catch(e) 
+		{
+		  c('Error') 
+		} 
+	}  
+	function update_button(test, val)
+	{
+		curr_player = val.substring(3, 4);
+		
+		var value = val.substring(0, 2);
+			  
+		player1 = parseInt(document.getElementById(value + "_1").value,10);
+		player2 = parseInt(document.getElementById(value + "_2").value,10);
+		player3 = parseInt(document.getElementById(value + "_3").value,10);
+		player4 = parseInt(document.getElementById(value + "_4").value,10);
+		
+		var curr_player = val.substring(3, 4);
+		var curr_score = parseInt(document.getElementById("d" + curr_player).value,10);
+		if (curr_score != parseInt(curr_score,10)){var curr_score = 0;}
+		if (curr_player == "1")
+		{
+			curr_score_1 = parseInt(document.getElementById("d2").value,10);
+			if (curr_score_1 != parseInt(curr_score_1,10)){var curr_score_1 = 0;}
+			curr_score_2 = parseInt(document.getElementById("d3").value,10);
+			if (curr_score_2 != parseInt(curr_score_2,10)){var curr_score_2 = 0;}
+			curr_score_3 = parseInt(document.getElementById("d4").value,10);
+			if (curr_score_3 != parseInt(curr_score_3,10)){var curr_score_3 = 0;}
+		}
+		else if(curr_player == "2")
+		{
+			curr_score_1 = parseInt(document.getElementById("d1").value,10);
+			if (curr_score_1 != parseInt(curr_score_1,10)){var curr_score_1 = 0;}
+			curr_score_2 = parseInt(document.getElementById("d3").value,10);
+			if (curr_score_2 != parseInt(curr_score_2,10)){var curr_score_2 = 0;}
+			curr_score_3 = parseInt(document.getElementById("d4").value,10);
+			if (curr_score_3 != parseInt(curr_score_3,10)){var curr_score_3 = 0;}
+		}
+		else if(curr_player == "3")
+		{
+			curr_score_1 = parseInt(document.getElementById("d2").value,10);
+			if (curr_score_1 != parseInt(curr_score_1,10)){var curr_score_1 = 0;}
+			curr_score_2 = parseInt(document.getElementById("d1").value,10);
+			if (curr_score_2 != parseInt(curr_score_2,10)){var curr_score_2 = 0;}
+			curr_score_3 = parseInt(document.getElementById("d4").value,10);
+			if (curr_score_3 != parseInt(curr_score_3,10)){var curr_score_3 = 0;}
+		}
+		else if(curr_player == "4")
+		{
+			curr_score_1 = parseInt(document.getElementById("d2").value,10);
+			if (curr_score_1 != parseInt(curr_score_1,10)){var curr_score_1 = 0;}
+			curr_score_2 = parseInt(document.getElementById("d3").value,10);
+			if (curr_score_2 != parseInt(curr_score_2,10)){var curr_score_2 = 0;}
+			curr_score_3 = parseInt(document.getElementById("d1").value,10);
+			if (curr_score_3 != parseInt(curr_score_3,10)){var curr_score_3 = 0;}
+		}
+  
+		if (test.value == " ")
+		  {
+			  test.value = "1";
+			  document.getElementById(val).style.background = "linear-gradient(to right, #00bba1, #000000, #000000)";
+		  }
+		  else if (test.value == "1")
+		  {
+			  test.value = "2";
+			  document.getElementById(val).style.background = "linear-gradient(to right, #00bba1, #00bba1, #000000)";
+			  
+		  }
+		  else if (test.value == "2")
+		  {
+			  test.value = "3";
+			  document.getElementById(val).style.background = "linear-gradient(to right, #00bba1, #00bba1, #00bba1)";
+			  
+			  
+			  // player finish counter for all players
+			  if (curr_player == "1")
+			  {
+				  player1_finish += 1;
+				  curr_player_finish = player1_finish;
+			  }
+			  else if (curr_player == "2")
+			  {
+				  player2_finish += 1;
+				  curr_player_finish = player2_finish;
+			  }
+			  else if (curr_player == "3")
+			  {
+				  player3_finish += 1;
+				  curr_player_finish = player3_finish;
+			  }
+			  else if (curr_player == "4")
+			  {
+				  player4_finish += 1;
+				  curr_player_finish = player4_finish;
+			  }
+			  // check if finish?
+			  if ((curr_player_finish == 7) & (curr_score > curr_score_1 & curr_score > curr_score_2 & curr_score > curr_score_3))
+			  {
+				  popup(curr_player);
+			  }
+		  }
+		  else
+		  {		  
+			  // do nothing or change button style?
+			  // if all 3 check if all finished and if best score?
+			  if (player1 >= 3 & player2 >= 3 & player3 >= 3 & player4 >= 3)
+			  {
+				  if ((curr_player_finish == 7) & (curr_score > curr_score_1 & curr_score > curr_score_2 & curr_score > curr_score_3))
+				  {
+					  popup(curr_player);
+				  }
+				  else if ((curr_player_finish == 7) & (curr_score <= curr_score_1 & curr_score <= curr_score_2 & 	curr_score <= curr_score_3))
+				  {
+					  update_score(test,val);
+					  curr_score = parseInt(document.getElementById("d" + val.substring(3, 4)).value,10);
+					  if (curr_score > curr_score_1 & curr_score > curr_score_2 & curr_score > curr_score_3)
+			  		  {
+						  popup(curr_player);
+			  		  }
+				  }
+			  }
+			  else if ((curr_player_finish == 7) & (curr_score > curr_score_1 & curr_score > curr_score_2 & curr_score > curr_score_3))
+			  {
+				  popup(curr_player);
+			  }
+			  else
+			  {
+				  update_score(test,val);
+				  curr_score = parseInt(document.getElementById("d" + val.substring(3, 4)).value,10);
+				  if ((curr_player_finish == 7) & (curr_score > curr_score_1 & curr_score > curr_score_2 & curr_score > curr_score_3))
+				  {
+					  popup(curr_player);
+				  }
+			  }
+		  }
+	}
+	function update_score(test,val)
+	{
+		var result = parseInt(test.value,10);
+		result = result + 1;
+		test.value = result.toString();  // update Button text
+		
+		var new_val = val.substring(0, 2);
+		var textfield = val.substring(3, 4);
+		
+		//update score of player
+		var score = parseInt(document.getElementById("d" + textfield).value,10);
+		
+		if (score != parseInt(score,10))
+		{
+			var score = 0;
+		}
+		
+		score = score + parseInt(new_val,10);
+		document.getElementById("d" + textfield).value = score.toString();
+	}
+	function popup(curr_player) {
+    if (confirm(document.getElementById("pl" + curr_player).value + " won! New Game?") == true) {
+			new_game();
+    	} 
+	}
+	function playerchange(val)
+	{
+		if (val == "2player")
+		{
+			for (i = 15; i <= 21; i++) 
+			{ 
+				for (j = 3; j <= 4; j++)
+				{
+					if (i == 21)
+					{
+						document.getElementById("25_" + j.toString()).value = "3";
+						document.getElementById("25_" + j.toString()).style.display = "none";
+					}
+					else
+					{
+						document.getElementById(i.toString() + "_" + j.toString()).value = "3";
+						document.getElementById(i.toString() + "_" + j.toString()).style.display = "none";
+					}
+				}
+				for (j = 1; j <= 2; j++)
+				{
+					if (i == 21)
+					{
+						document.getElementById("25_" + j.toString()).value = " ";
+						document.getElementById("25_" + j.toString()).style.display = "inline-block";
+						document.getElementById("25_" + j.toString()).style.background = "#000000";
+					}
+					else
+					{
+						document.getElementById(i.toString() + "_" + j.toString()).value = " ";
+						document.getElementById(i.toString() + "_" + j.toString()).style.display = "inline-block";
+						document.getElementById(i.toString() + "_" + j.toString()).style.background = "#000000";
+					}
+				}
+			}
+			document.getElementById("pl3").style.display = "none";
+			document.getElementById("d3").style.display = "none";
+			document.getElementById("pl4").style.display = "none";
+			document.getElementById("d4").style.display = "none";
+			document.getElementById("d1").value = "0";
+			document.getElementById("d2").value = "0";
+		}
+		else if (val == "3player")
+		{ 
+			for (i = 15; i <= 21; i++) 
+			{ 
+					if (i == 21)
+					{
+						document.getElementById("25_4").value = "3";
+						document.getElementById("25_4").style.display = "none";
+						document.getElementById("25_3").value = " ";
+						document.getElementById("25_3").style.display = "inline-block";
+						document.getElementById("25_3").style.background = "#000000";
+						document.getElementById("25_2").value = " ";
+						document.getElementById("25_2").style.display = "inline-block";
+						document.getElementById("25_2").style.background = "#000000";
+						document.getElementById("25_1").value = " ";
+						document.getElementById("25_1").style.display = "inline-block";
+						document.getElementById("25_1").style.background = "#000000";
+					}
+					else
+					{
+						document.getElementById(i.toString() + "_4").value = "3";
+						document.getElementById(i.toString() + "_4").style.display = "none";
+						document.getElementById(i.toString() + "_3").value = " ";
+						document.getElementById(i.toString() + "_3").style.display = "inline-block";
+						document.getElementById(i.toString() + "_3").style.background = "#000000";
+						document.getElementById(i.toString() + "_2").value = " ";
+						document.getElementById(i.toString() + "_2").style.display = "inline-block";
+						document.getElementById(i.toString() + "_2").style.background = "#000000";
+						document.getElementById(i.toString() + "_1").value = " ";
+						document.getElementById(i.toString() + "_1").style.display = "inline-block";
+						document.getElementById(i.toString() + "_1").style.background = "#000000";
+					}
+			}
+			document.getElementById("pl3").style.display = "inline-block";
+			document.getElementById("d3").style.display = "inline-block";
+			document.getElementById("pl4").style.display = "none";
+			document.getElementById("d4").style.display = "none";
+			document.getElementById("d1").value = "0";
+			document.getElementById("d2").value = "0";
+			document.getElementById("d3").value = "0";
+		}
+		else
+		{
+			for (i = 15; i <= 21; i++) 
+			{ 
+				for (j = 1; j <= 4; j++)
+				{
+					if (i == 21)
+					{
+						document.getElementById("25_" + j.toString()).value = " ";
+						document.getElementById("25_" + j.toString()).style.display = "inline-block";
+						document.getElementById("25_" + j.toString()).style.background = "#000000";
+					}
+					else
+					{
+						document.getElementById(i.toString() + "_" + j.toString()).value = " ";
+						document.getElementById(i.toString() + "_" + j.toString()).style.display = "inline-block";
+						document.getElementById(i.toString() + "_" + j.toString()).style.background = "#000000";
+					}
+				}
+			}
+			document.getElementById("pl3").style.display = "inline-block";
+			document.getElementById("d3").style.display = "inline-block";
+			document.getElementById("pl4").style.display = "inline-block";
+			document.getElementById("d4").style.display = "inline-block";
+			document.getElementById("d1").value = "0";
+			document.getElementById("d2").value = "0";
+			document.getElementById("d3").value = "0";
+			document.getElementById("d4").value = "0";
+		}
+	}
+	function new_game()
+	{
+		player1_finish = 0, player2_finish = 0, player3_finish = 0, player4_finish = 0;
+		
+		if (document.getElementById("myoptions").selectedIndex == "0")
+		{
+			playerchange("2player");
+		}
+		else if (document.getElementById("myoptions").selectedIndex == "1")
+		{
+			playerchange("3player");
+		}
+		else
+		{
+			playerchange("4player");
+		}
+	}
+	</script></body></html>

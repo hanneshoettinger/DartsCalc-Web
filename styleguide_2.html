@@ -1,0 +1,120 @@
+<!doctype html><html><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=description content="Universal Web Darts Scoring."><meta name=viewport content="width=device-width, initial-scale=1"><title>Web Darts Scoring</title><link rel=stylesheet href=styles/main.css></head><body><header class="app-bar promote-layer"><div class=app-bar-container><button class=menu><img src=images/hamburger.svg alt=Menu></button><h1 class=logo>Web <strong>Darts Scoring</strong></h1><section class=app-bar-actions></section></div></header><nav class="navdrawer-container promote-layer"><h4>Navigation</h4><ul><li><a href=index.html>Hello</a></li><li><a href=styleguide_1.html>Cricket</a></li><li><a href=styleguide_2.html>501</a></li></ul></nav><main><body class=page--styleguide><div class=container><div class=medium><br><select onchange=playerchange(this.options[this.selectedIndex].value) id=myoptions><option value=2player id=2player>2 Player</option><option value=3player id=3player>3 Player</option><option value=4player id=4player selected>4 Player</option></select><p><input type=text id=pl1 value="Pl 1" style="max-width:10%; width:100%; border:hidden; font-weight:800; display:inline-block; align-items:flex-start; min-width:48px"><input type=text id=pl2 value="Pl 2" style="max-width:10%; width:100%; border:hidden; font-weight:800; display:inline-block; align-items:flex-start; min-width:48px"><input type=text id=pl3 value="Pl 3" style="max-width:10%; width:100%; border:hidden; font-weight:800; display:inline-block; align-items:flex-start; min-width:48px"><input type=text id=pl4 value="Pl 4" style="max-width:10%; width:100%; border:hidden; font-weight:800; display:inline-block; align-items:flex-start; min-width:48px"></p></div><div class=keys><input type=text id=score_1 value=501 style="max-width:10%; width:100%; font-weight:800; text-align: center; font-size:24px; display:	inline-block; align-items:flex-start; min-width:48px; color:#4285f4" onkeydown="if (event.keyCode == 13) { scoring(this.id);return false;}" pattern=\d*><input type=text id=score_2 value=501 style="max-width:10%; width:100%; font-weight:800; text-align: center; font-size:24px; display:inline-block; align-items:flex-start; min-width:48px; color:#4285f4" onkeydown="if (event.keyCode == 13) { scoring(this.id);return false;}" pattern=\d*><input type=text id=score_3 value=501 style="max-width:10%; width:100%; font-weight:800; text-align: center; font-size:24px; display:inline-block; align-items:flex-start; min-width:48px; color:#4285f4" onkeydown="if (event.keyCode == 13) { scoring(this.id);return false;}" pattern=\d*><input type=text id=score_4 value=501 style="max-width:10%; width:100%; font-weight:800; text-align: center; font-size:24px; display:inline-block; align-items:flex-start; min-width:48px; color:#4285f4" onkeydown="if (event.keyCode == 13) { scoring(this.id);return false;}" pattern=\d*><br></div><div class=medium><input type=text id=d1 style="max-width:10%; width:100%; font-weight:800; text-align: center; font-size:24px; display:inline-block; align-items:flex-start; min-width:48px" onkeydown="if (event.keyCode == 13) { scoring(this.id);return false;}" pattern=\d*><input type=text id=d2 style="max-width:10%; width:100%; font-weight:800; text-align: center; font-size:24px; display:inline-block; align-items:flex-start; min-width:48px" onkeydown="if (event.keyCode == 13) { scoring(this.id);return false;}" pattern=\d*><input type=text id=d3 style="max-width:10%; width:100%; font-weight:800; text-align: center; font-size:24px; display:inline-block; align-items:flex-start; min-width:48px" onkeydown="if (event.keyCode == 13) { scoring(this.id);return false;}" pattern=\d*><input type=text id=d4 style="max-width:10%; width:100%; font-weight:800; text-align: center; font-size:24px; display:inline-block; align-items:flex-start; min-width:48px" onkeydown="if (event.keyCode == 13) { scoring(this.id);return false;}" pattern=\d*></div><div class=medium><input type=button class=button--secondary value=New onclick=new_game() style="background-color:#000000; max-width:40%; width:100%; text-align: center"></div></div></body><p></p><p></p></main><script src=scripts/main.min.js></script><script>
+	var player1_finish = 0, player2_finish = 0, player3_finish = 0, player4_finish = 0;
+	
+    function c(val)
+	{
+		document.getElementById("d").value=val;
+	}
+	function v(val)
+  	{
+		var test = document.getElementById(val);
+		update_button(test, val);
+	}
+	function e() 
+	{ 
+		try 
+		{ 
+		  c(eval(document.getElementById("d").value)) 
+		} 
+		catch(e) 
+		{
+		  c('Error') 
+		} 
+	}  
+	function scoring(val)
+	{
+		var score = parseInt(document.getElementById(val).value,10);
+		
+		if (score != parseInt(score,10))
+		{
+			var score = 0;
+		}
+		
+		curr_player = val.substring(1, 2);
+		
+		scoring_player(curr_player,score);
+		
+		document.getElementById(val).value = "";
+	}
+	function scoring_player(curr_player,score)
+	{
+		var curr_score = document.getElementById("score_" + curr_player).value;
+		var test = parseInt(curr_score,10);
+		test = test - score;
+		if (test <= 1 & test != 0)
+		{
+			document.getElementById("score_" + curr_player).value = curr_score;	
+		}
+		else
+		{
+			document.getElementById("score_" + curr_player).value = test.toString();	
+		}
+	}
+	
+	
+	function playerchange(val)
+	{
+		if (val == "2player")
+		{
+			document.getElementById("pl3").style.display = "none";
+			document.getElementById("d3").style.display = "none";
+			document.getElementById("pl4").style.display = "none";
+			document.getElementById("d4").style.display = "none";
+			document.getElementById("score_3").style.display = "none";
+			document.getElementById("score_4").style.display = "none";
+			document.getElementById("d1").value = "";
+			document.getElementById("d2").value = "";
+			document.getElementById("score_1").value = "501";
+			document.getElementById("score_2").value = "501";
+		}
+		else if (val == "3player")
+		{ 
+			document.getElementById("pl3").style.display = "inline-block";
+			document.getElementById("d3").style.display = "inline-block";
+			document.getElementById("pl4").style.display = "none";
+			document.getElementById("d4").style.display = "none";
+			document.getElementById("d1").value = "";
+			document.getElementById("d2").value = "";
+			document.getElementById("d3").value = "";
+			document.getElementById("score_3").style.display = "inline-block";
+			document.getElementById("score_4").style.display = "none";
+			document.getElementById("score_1").value = "501";
+			document.getElementById("score_2").value = "501";
+			document.getElementById("score_3").value = "501";
+		}
+		else
+		{
+			document.getElementById("pl3").style.display = "inline-block";
+			document.getElementById("d3").style.display = "inline-block";
+			document.getElementById("pl4").style.display = "inline-block";
+			document.getElementById("d4").style.display = "inline-block";
+			document.getElementById("d1").value = "";
+			document.getElementById("d2").value = "";
+			document.getElementById("d3").value = "";
+			document.getElementById("d4").value = "";
+			document.getElementById("score_3").style.display = "inline-block";
+			document.getElementById("score_4").style.display = "inline-block";
+			document.getElementById("score_1").value = "501";
+			document.getElementById("score_2").value = "501";
+			document.getElementById("score_3").value = "501";
+			document.getElementById("score_4").value = "501";
+		}
+	}
+	function new_game()
+	{
+		player1_finish = 0, player2_finish = 0, player3_finish = 0, player4_finish = 0;
+		
+		if (document.getElementById("myoptions").selectedIndex == "0")
+		{
+			playerchange("2player");
+		}
+		else if (document.getElementById("myoptions").selectedIndex == "1")
+		{
+			playerchange("3player");
+		}
+		else
+		{
+			playerchange("4player");
+		}
+	}
+	</script></body></html>
